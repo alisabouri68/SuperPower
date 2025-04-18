@@ -383,10 +383,10 @@ document.addEventListener("scroll", () => {
   lastScrollTop = currentScroll;
   clip[0].style.backgroundSize = `${(rect / 20) - 100}% 100%`
   clip[1].style.backgroundSize = `${(rect / 20) - 100}% 100%`
-  if (window.scrollY < 1000) {
-    window.scrollTo(0, 1000)
+  // if (window.scrollY < 1000) {
+  //   window.scrollTo(0, 1000)
 
-  }
+  // }
   if (rect < 3500) {
     stylesElement(videoOneParent, "1", videoTwoParent, "0")
   } else if (rect > 3500 && rect < 4900) {
