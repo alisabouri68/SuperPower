@@ -356,6 +356,7 @@ function stylesElement(element, value, element2, value2) {
 }
 // ==========================
 window.addEventListener("load", () => {
+  console.log("xxxx")
   videoOne.play();
   videoTwo.play();
   setTimeout(() => {
