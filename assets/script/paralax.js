@@ -260,7 +260,7 @@ const arrDoctor = [
   },
 ]
 // =========function==================
-function hightvideoSection() {
+function highlightVideoSection() {
   videoOneDuration = videoTwo.duration;
   videoTwoDuration = videoOne.duration;
   videoSection.style.minHeight =
@@ -357,14 +357,23 @@ function stylesElement(element, value, element2, value2) {
 }
 // ==========================
 window.addEventListener("load", () => {
-  modal.style.display="none"
-    videoOne.play();
-  videoTwo.play();
-  setTimeout(() => {
-    videoOne.pause();
-    videoTwo.pause();
-  }, 300);
-  hightvideoSection();
+  let loadedCount = 0;
+  const tryPlay = () => {
+    loadedCount++;
+    if (loadedCount === 2) {
+      videoOne.play();
+      videoTwo.play();
+      setTimeout(() => {
+        modal.style.display = "none";
+        videoOne.pause();
+        videoTwo.pause();
+      }, 300);
+      highlightVideoSection();
+    }
+  };
+
+  videoOne.addEventListener("canplaythrough", tryPlay);
+  videoTwo.addEventListener("canplaythrough", tryPlay);
 });
 document.addEventListener("scroll", () => {
   let time = scrollY / 800;
