@@ -24,6 +24,7 @@ const rightx = document.querySelector(".rightx")
 const transition = document.querySelector(".transition")
 const transitione = document.querySelector(".transitione")
 const tr = document.querySelector(".tr")
+const modal = document.querySelector(".modal")
 // =========flag======================
 let scrollingDown = false;
 let lastScrollTop = 0;
@@ -356,8 +357,8 @@ function stylesElement(element, value, element2, value2) {
 }
 // ==========================
 window.addEventListener("load", () => {
-  console.log("xxxx")
-  videoOne.play();
+  modal.style.display="none"
+    videoOne.play();
   videoTwo.play();
   setTimeout(() => {
     videoOne.pause();
