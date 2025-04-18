@@ -363,7 +363,7 @@ window.addEventListener("load", () => {
   setTimeout(() => {
     videoOne.pause();
     videoTwo.pause();
-  }, 100);
+  }, 300);
   hightvideoSection();
 });
 document.addEventListener("scroll", () => {
