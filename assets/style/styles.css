@@ -141,6 +141,7 @@ main {
 
 .video-section {
     width: 100vw;
+    height: max-content;
     position: relative;
 }
 
@@ -1141,7 +1142,7 @@ main {
     text-align: center;
     gap: 20px;
     width: 100vw;
-    height: 500vh;
+    height: 2000px;
     background: rgb(0, 0, 0);
     transform: translateY(-10px);
 
@@ -1220,7 +1221,7 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    min-height: 150vh;
+    height: 550px;
 
     >div {
         &:nth-child(1) {

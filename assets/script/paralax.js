@@ -264,7 +264,7 @@ function highlightVideoSection() {
   videoOneDuration = videoTwo.duration;
   videoTwoDuration = videoOne.duration;
   videoSection.style.minHeight =
-    parseInt(videoOneDuration + videoTwoDuration) * 100 + "vh";
+    parseInt(videoOneDuration + videoTwoDuration) * 700 + "px";
 };
 function addAlbum() {
   obj.forEach((item, index) => {
@@ -383,6 +383,7 @@ document.addEventListener("scroll", () => {
   // ==================================================================================
   let tt = videoSection.getBoundingClientRect();
   let rect = Math.abs(tt.top);
+  console.log(rect)
   let currentScroll = window.scrollY;
   if (currentScroll > lastScrollTop) {
     scrollingDown = true;
@@ -392,10 +393,6 @@ document.addEventListener("scroll", () => {
   lastScrollTop = currentScroll;
   clip[0].style.backgroundSize = `${(rect / 20) - 100}% 100%`
   clip[1].style.backgroundSize = `${(rect / 20) - 100}% 100%`
-  // if (window.scrollY < 1000) {
-  //   window.scrollTo(0, 1000)
-
-  // }
   if (rect < 3500) {
     stylesElement(videoOneParent, "1", videoTwoParent, "0")
   } else if (rect > 3500 && rect < 4900) {
@@ -440,7 +437,7 @@ document.addEventListener("scroll", () => {
     childVideoStiky.style.background = `black`
     mouseAnimation = false
   }
-  if (rect > 9250 && rect < 10300 && window.innerWidth < 1400) {
+  if (rect > 9650 && rect < 10500 ) {
     document.querySelectorAll(".child-cube>div").forEach(item => {
       item.classList.remove("activecube")
     })
@@ -449,47 +446,47 @@ document.addEventListener("scroll", () => {
       item.classList.add("activecube")
     })
   }
-  if (window.innerWidth > 1900 && rect > 12800 && rect < 14500) {
-    document.querySelectorAll(".child-cube>div").forEach(item => {
-      item.classList.remove("activecube")
-    })
-  } else if (window.innerWidth > 1900 && rect < 12800 && rect > 14500) {
-    document.querySelectorAll(".child-cube>div").forEach(item => {
-      item.classList.add("activecube")
-    })
-  }
-  if (rect > 11300 && rect < 12050 && window.innerWidth < 1400) {
+  // if (window.innerWidth > 1900 && rect > 12800 && rect < 14500) {
+  //   document.querySelectorAll(".child-cube>div").forEach(item => {
+  //     item.classList.remove("activecube")
+  //   })
+  // } else if (window.innerWidth > 1900 && rect < 12800 && rect > 14500) {
+  //   document.querySelectorAll(".child-cube>div").forEach(item => {
+  //     item.classList.add("activecube")
+  //   })
+  // }
+  if (rect > 11700 && rect < 12300 ) {
     timelines1.style.transform = "translateX(0%)"
     timelines2.style.transform = "translateX(0%)"
-  } else if (rect < 11300 || rect > 12050 && window.innerWidth < 1400) {
+  } else if (rect < 11500 || rect > 12300 ) {
     timelines1.style.transform = "translateX(100%)"
     timelines2.style.transform = "translateX(-100%)"
   }
-  if (window.innerWidth > 1900 && rect > 15650 && rect < 19300) {
-    timelines1.style.transform = "translateX(0%)"
-    timelines2.style.transform = "translateX(0%)"
-  } else if (window.innerWidth > 1900 && rect > 15650 && rect < 19300) {
-    timelines1.style.transform = "translateX(100%)"
-    timelines2.style.transform = "translateX(-100%)"
-  }
-  if (rect > 12200 && rect < 13500 && scrollingDown && window.innerWidth < 1400) {
+  // if (window.innerWidth > 1900 && rect > 15650 && rect < 19300) {
+  //   timelines1.style.transform = "translateX(0%)"
+  //   timelines2.style.transform = "translateX(0%)"
+  // } else if (window.innerWidth > 1900 && rect > 15650 && rect < 19300) {
+  //   timelines1.style.transform = "translateX(100%)"
+  //   timelines2.style.transform = "translateX(-100%)"
+  // }
+  if (rect > 12700 && rect < 13500 && scrollingDown) {
     flagheight >= 0 ? flagheight += 20 : flagheight = 0;
     transition.style.height = flagheight + "px"
-  } else if (rect > 11900 && rect < 13000 && !scrollingDown && window.innerWidth < 1400) {
+  } else if (rect > 12500 && rect < 13200 && !scrollingDown ) {
     flagheight >= 0 ? flagheight -= 20 : flagheight = 0;
     transition.style.height = flagheight + "px"
-  } else if (rect > 13500 && window.innerWidth < 1400) {
+  } else if (rect > 13500 ) {
     flagheight = 900
   }
-  if (rect > 16700 && rect < 18000 && scrollingDown && window.innerWidth > 1900) {
-    flagheight >= 0 ? flagheight += 20 : flagheight = 0;
-    transition.style.height = flagheight + "px"
-  } else if (rect > 16400 && rect < 18000 && !scrollingDown && window.innerWidth > 1900) {
-    flagheight >= 0 ? flagheight -= 20 : flagheight = 0;
-    transition.style.height = flagheight + "px"
-  } else if (rect > 18000 && window.innerWidth > 1900) {
-    flagheight = 1900
-  }
+  // if (rect > 16700 && rect < 18000 && scrollingDown && window.innerWidth > 1900) {
+  //   flagheight >= 0 ? flagheight += 20 : flagheight = 0;
+  //   transition.style.height = flagheight + "px"
+  // } else if (rect > 16400 && rect < 18000 && !scrollingDown && window.innerWidth > 1900) {
+  //   flagheight >= 0 ? flagheight -= 20 : flagheight = 0;
+  //   transition.style.height = flagheight + "px"
+  // } else if (rect > 18000 && window.innerWidth > 1900) {
+  //   flagheight = 1900
+  // }
   if (rect > 14100 && rect < 15200) {
     tr.style.opacity = "1"
 
@@ -497,25 +494,25 @@ document.addEventListener("scroll", () => {
     tr.style.opacity = "0"
 
   }
-  if (rect > 15600 && rect < 16900 && scrollingDown && window.innerWidth < 1400) {
-    flagheighte >= 0 ? flagheighte -= 20 : flagheighte = 0;
+  if (rect > 14950 && rect < 17000 && scrollingDown ) {
+    flagheighte >= 0 ? flagheighte -= 18 : flagheighte = 0;
     transitione.style.height = flagheighte + "px"
-  } else if (rect > 15300 && rect < 16900 && !scrollingDown && window.innerWidth < 1400) {
-    flagheighte >= 0 ? flagheighte += 20 : flagheighte = 0;
+  } else if (rect > 14950 && rect < 17000 && !scrollingDown) {
+    flagheighte >= 0 ? flagheighte += 18 : flagheighte = 0;
     transitione.style.height = flagheighte + "px"
-  } else if (rect > 17000 && window.innerWidth < 1400) {
+  } else if (rect > 17000 ) {
     flagheighte = 900
   }
-  if (rect > 16700 && rect < 18000 && scrollingDown && window.innerWidth > 1900) {
-    flagheighte >= 0 ? flagheighte -= 20 : flagheighte = 0;
-    transitione.style.height = flagheighte + "px"
-  } else if (rect > 16400 && rect < 18000 && !scrollingDown && window.innerWidth > 1900) {
-    flagheighte >= 0 ? flagheighte += 20 : flagheighte = 0;
-    transitione.style.height = flagheighte + "px"
-  } else if (rect > 18000 && window.innerWidth > 1900) {
-    flagheighte = 2000
-  }
-});
+//   if (rect > 16700 && rect < 18000 && scrollingDown && window.innerWidth > 1900) {
+//     flagheighte >= 0 ? flagheighte -= 20 : flagheighte = 0;
+//     transitione.style.height = flagheighte + "px"
+//   } else if (rect > 16400 && rect < 18000 && !scrollingDown && window.innerWidth > 1900) {
+//     flagheighte >= 0 ? flagheighte += 20 : flagheighte = 0;
+//     transitione.style.height = flagheighte + "px"
+//   } else if (rect > 18000 && window.innerWidth > 1900) {
+//     flagheighte = 2000
+//   }
+ });
 parentVideoStiky.addEventListener('mousemove', (event) => {
   if (mouseAnimation) {
     const rect = parentVideoStiky.getBoundingClientRect();
