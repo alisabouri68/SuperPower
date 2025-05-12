@@ -2,8 +2,14 @@
 
 یک پروژه ساده برای یادگیری پیاده سازی افکت پارالاکس با استفاده از HTML، CSS و JavaScript خام.
 
-![دموی پروژه](https://alisabouri68.github.io/SuperPower/)
+
+
 [DEMO](https://alisabouri68.github.io/SuperPower/)
+
+![Image](https://github.com/user-attachments/assets/fdbea58f-437d-474e-8ae7-2f83392bf0cf)
+
+
+
 
 ## 🚀 ویژگی‌ها
 - افکت پارالاکس روان با اسکرول ماوس/لمس
